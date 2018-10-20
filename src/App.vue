@@ -1,28 +1,60 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-container grid-list-md text-xs-center>
+    <div id="app">
+      <header>
+        <h1 class="app-title">Intro to Vue.js</h1>
+      </header>
+      <!-- <base-nav></base-nav> -->
+      <div class="router-links">
+        <p class="nav"><router-link to="/">Home</router-link></p>
+        <p class="nav"><router-link to="/about">About</router-link></p>
+        <p class="nav"><router-link to="/completed">Completed</router-link></p>
+      </div>
+      <router-view></router-view>
+      <footer> 
+         <span class="footer-title">2018 | Tech, Rebalanced</span>
+      </footer>
+    </div>
+  </v-container>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BaseNav from './components/BaseNav';
 
 export default {
-  name: 'app',
+  name: "App",
   components: {
-    HelloWorld
+    BaseNav
   }
-}
+};
 </script>
 
-<style>
+<style lang='scss'>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   margin-top: 60px;
+}
+
+.app-title {
+  margin-bottom: 20px;
+}
+
+.nav {
+  display: inline;
+  margin: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+.footer-title {
+  font-size: 16px;
 }
 </style>
