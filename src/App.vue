@@ -11,6 +11,8 @@
         <p class="nav"><router-link to="/completed">Completed</router-link></p>
       </div>
       <router-view></router-view>
+      <!-- router view is a functional component that will match the rendered component 
+      https://router.vuejs.org/api/#router-view -->
       <footer> 
          <span class="footer-title">2018 | Tech, Rebalanced</span>
       </footer>

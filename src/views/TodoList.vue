@@ -1,12 +1,19 @@
 <template>
   <div>
     <add-todo :handleAddTodo="addTodo"></add-todo>
+      <!-- Here, I'm importing my input box component and passing it a handleAddTodo prop, this will bind the addTodo method
+     so that I can add an item to the todoList -->
     <ul>
       <li v-for="(todo, i) in todoList" :key=i id="todo-list__item">
+        <!-- v-for allows me to iterate over the todoList that is in my data object -->
+        <!-- v-for takes up to two arguments: the item and its index; the index is optional; https://vuejs.org/v2/guide/list.html -->
       <span :class="{'completed': todo.isComplete}" id="todo-list__item-name">{{ todo.name }}</span>
+        <!-- vue allows for class bindings so that I can render a different style for items that are complete -->
+        <!-- the completed class will ONLY be toggled if the todo.isComplete value is true -->
         <div class="btn-container">
           <v-btn class="complete-btn btn" @click="completeTodo(i)">✔</v-btn>
           <v-btn class="delete-btn btn" @click="deleteTodo(i)">X</v-btn>
+          <!-- /* v-btn is a vuetify component that I'm using here instead of creating my own buttons */ -->
         </div>
       </li>
     </ul>
@@ -25,11 +32,16 @@ export default {
       todoList: [],
     };
   },
+  /* `created` is a lifecycle method; lifecycle methods are very useful 
+    if you need to run code at a specific point in the component's lifecycle, in this case I want to make sure
+    I receive my list data from the API, and that it is available on the component when the component is initialized.
+  */
   async created() {
-    // fetch the list from an API
     this.todoList = await this.fetchList();
   },
   methods: {
+    // using async and await to fetch data from an API
+    // Note: I'm NOT using es6 synax on these methods (e.g. () => {} ) because the value of `this` doesn't have context of the vue instance
     fetchList: async function() {
       const response = await fetch("https://api.myjson.com/bins/84dc0");
       const data = await response.json();
@@ -42,10 +54,8 @@ export default {
       return this.todoList.splice(i, 1);
     },
     completeTodo: function(i) {
-      // this.todoList[i] = this.todoList[i].isComplete = !this.todoList[i].isComplete
       this.todoList[i].isComplete = !this.todoList[i].isComplete;    
-      console.log(i, 'completed', 'status:', this.todoList[i].isComplete)  
-
+      console.log('the index:', i, 'status:', this.todoList[i].isComplete)  
     }
   },
   computed: {

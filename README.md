@@ -27,6 +27,6 @@ npm run lint
 2. `App.vue` is a Single File Component (SFC) that wraps the entire project. It's your application's root component.
 
 ## Concepts
-* Reactivity
-* Modularity
-* 
+* Declarative rendering data using interpolation (these are the curly braces)
+* Reactivity - when our data changes, Vue will update all the places where we are using it!
+* Modularity - build reusable components

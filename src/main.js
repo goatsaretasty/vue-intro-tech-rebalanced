@@ -19,7 +19,6 @@ Vue.use(VueRouter);
 const routes = [
   { path: "/", component: TodoList },
   { path: "/about", component: About },
-  { path: "/completed", component: TodoCompleted }
 ];
 
 const router = new VueRouter({ routes });
