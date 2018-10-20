@@ -1,8 +1,7 @@
 <template> 
-  <div>
+  <div class="about">
     <p>{{ text }}</p>
   </div>
-
 </template>
 
 <script>
@@ -16,6 +15,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+.about {
+  margin-top: 20px;
+}
 
 </style>

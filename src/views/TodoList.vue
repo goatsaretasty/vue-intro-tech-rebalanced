@@ -11,7 +11,7 @@
         <!-- vue allows for class bindings so that I can render a different style for items that are complete -->
         <!-- the completed class will ONLY be toggled if the todo.isComplete value is true -->
         <div class="btn-container">
-          <v-btn class="complete-btn btn" @click="completeTodo(i)">✔</v-btn>
+          <v-btn class="complete-btn btn" @click="toggleTodo(i)">✔</v-btn>
           <v-btn class="delete-btn btn" @click="deleteTodo(i)">X</v-btn>
           <!-- /* v-btn is a vuetify component that I'm using here instead of creating my own buttons */ -->
         </div>
@@ -54,7 +54,7 @@ export default {
     deleteTodo: function(i) {
       return this.todoList.splice(i, 1);
     },
-    completeTodo: function(i) {
+    toggleTodo: function(i) {
       this.todoList[i].isComplete = !this.todoList[i].isComplete;    
       console.log('the index:', i, 'status:', this.todoList[i].isComplete)  
     }

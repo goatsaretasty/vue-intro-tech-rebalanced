@@ -9,7 +9,6 @@ import "vuetify/dist/vuetify.min.css";
 
 import TodoList from "./views/TodoList";
 import About from "./views/About";
-import TodoCompleted from "./views/TodoCompleted";
 
 Vue.config.productionTip = false;
 
