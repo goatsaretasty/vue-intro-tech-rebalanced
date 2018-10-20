@@ -22,10 +22,11 @@
 
 <script>
 import AddTodo from '../components/AddTodo';
+
 export default {
   name: "TodoList",
   components: {
-    AddTodo
+    AddTodo,
   },
   data() {
     return {

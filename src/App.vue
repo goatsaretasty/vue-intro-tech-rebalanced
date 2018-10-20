@@ -8,7 +8,6 @@
       <div class="router-links">
         <p class="nav"><router-link to="/">Home</router-link></p>
         <p class="nav"><router-link to="/about">About</router-link></p>
-        <p class="nav"><router-link to="/completed">Completed</router-link></p>
       </div>
       <router-view></router-view>
       <!-- router view is a functional component that will match the rendered component 

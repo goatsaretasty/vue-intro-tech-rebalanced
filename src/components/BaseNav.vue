@@ -2,7 +2,6 @@
   <div class="router-links">
     <p class="nav"><router-link to="/">{{ home }}</router-link></p>
     <p class="nav"><router-link to="/about">{{ about }}</router-link></p>
-    <p class="nav"><router-link to="/completed">{{ completed }}</router-link></p>
   </div>
 </template>
 
@@ -11,9 +10,8 @@ export default {
   name: 'BaseNav',
   data() {
     return {
-      home: 'Home',
-      about: 'About',
-      completed: 'Completed'
+      home: 'Go back to list',
+      about: 'About this app',
     }
   }
 }
