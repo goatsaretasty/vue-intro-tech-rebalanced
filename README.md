@@ -30,3 +30,9 @@ npm run lint
 * Declarative rendering data using interpolation (these are the curly braces)
 * Reactivity - when our data changes, Vue will update all the places where we are using it!
 * Modularity - build reusable components
+
+## Additional Resources
+* [Awesome Vue](https://github.com/vuejs/awesome-vue)
+* [Vue Vixens](https://vuevixens.github.io/docs/workshop/)
+* [Vue Mastery](https://www.vuemastery.com/)
+* [Vue DC](https://www.meetup.com/Vue-DC/)
